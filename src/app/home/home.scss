@@ -1,0 +1,96 @@
+/* src/app/home/home.component.css */
+
+
+.home-hero {
+    position: relative;
+  /* 1. Use Flexbox on the container */
+  display: flex; 
+  /* 2. Vertically center the content */
+  align-items: center; 
+  /* 3. Horizontally center the content */
+  justify-content: center;
+  
+  /* 4. Ensure the section takes up the full available height */
+  /* This height is crucial for vertical centering */
+  height: calc(100vh - 60px); /* Adjust 60px if your header height is different */
+  width: 100%;
+  
+  /* Optional: Background color/image for the hero section */
+//   background-color: #f4f4f4;
+
+
+  /* --- GUARANTEED ANIMATION STYLES (Based on Finisher Night) --- */
+  
+  /* 1. Define a dark, multi-color gradient (adjust colors to your preference) */
+  background-image: linear-gradient(
+    -45deg,
+    #000000, /* Black */
+    #fc0082, /* Dark Purple */
+    #8600fc, /* Darker Blue-Violet */
+    #000000  /* Black */
+  );
+  
+  /* 2. Make the background much larger than the container */
+  background-size: 400% 400%; 
+  
+  /* 3. Apply the animation: 10s duration, looping forever */
+  animation: gradient-shift 10s ease infinite; 
+  
+  /* CRITICAL: Ensure the text is visible over the dark background */
+  color: white;
+
+  
+}
+
+/* 4. Define the Keyframes (MUST be in the same file or a global file) */
+/* Since this is component-specific, keep it here: */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position (moves horizontally) */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
+}
+
+.hero-content {
+  /* 5. Center the text itself (H1, P, A) within its container */
+  text-align: center; 
+  max-width: 800px;
+  padding: 20px;
+
+  z-index: 2; /* Ensures content is above the animation canvas */
+  position: relative; /* Required for z-index to work */
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff; /* Example primary color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+  
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}

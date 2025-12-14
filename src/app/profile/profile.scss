@@ -1,0 +1,54 @@
+/* src/app/profile/profile.component.css */
+
+.profile-page {
+  /* Ensures the section fills the viewport height below the header */
+  min-height: calc(100vh - 60px); 
+  padding: 40px 20px;
+  background-color: #f8f8f8; /* Light background for the page */
+}
+
+.profile-container {
+  display: flex; /* Activate Flexbox for the container */
+  max-width: 1200px; /* Limits overall width for better readability */
+  margin: 0 auto; /* Centers the container on the page */
+  gap: 40px; /* Space between the two columns */
+  align-items: flex-start; /* Aligns content to the top */
+}
+
+/* --- Left Column: Information (50% Width) --- */
+.profile-info {
+  flex: 1; /* Takes up one share of space (50%) */
+  padding: 20px;
+}
+
+.profile-info h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* --- Right Column: Photo (50% Width) --- */
+.profile-photo {
+  flex: 1; /* Takes up one share of space (50%) */
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 100%; /* Image fills its column */
+  max-width: 400px; /* Prevents image from getting too large */
+  height: auto;
+  border-radius: 10px; /* Softens the image corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Layout for the detailed info */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for the details */
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+

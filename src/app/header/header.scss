@@ -1,0 +1,40 @@
+.main-header {
+  display: flex;
+  justify-content: space-between; /* Puts logo on left, nav on right */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white; /* Dark background */
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav li {
+  margin-left: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #FC0082; /* Highlight color for active/hover */
+  border-bottom: 2px solid #FC0082;
+}

@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* src/styles.scss */
+
+/* This targets the main content change triggered by the router */
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* This defines the speed and easing of the transition */
+  animation-duration: 0.4s; 
+  animation-timing-function: ease-in-out;
+}
+
+body {
+  /* 1. FONT-FAMILY: Choose a system font stack for high performance and reliability.
+       'Roboto' or 'Inter' are popular choices if loaded from Google Fonts (Recommended).
+       The stack below prioritizes system fonts (like Arial/Helvetica) and falls back 
+       to a generic sans-serif for max compatibility.
+  */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  
+  /* 2. FONT-SIZE: Set the base font size. 16px is the browser default and is recommended 
+       for accessibility, but we use '1rem' to keep it relative.
+  */
+  font-size: 1rem; /* 1rem = 16px (standard base size) */
+  
+  /* 3. LINE-HEIGHT: Improves readability for large blocks of text. */
+  line-height: 1.6;
+  
+  /* 4. COLOR: Set a dark, but not pure black, color for better eye comfort. */
+  color: #333333; 
+}
+
