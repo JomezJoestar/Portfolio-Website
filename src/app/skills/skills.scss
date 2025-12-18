@@ -43,9 +43,6 @@
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 32.72deg)) translateZ(400px);
     -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
-
-    animation: showLabel 20s linear infinite;
-    animation-delay: calc(var(--i) * -1.81s); /* (20s / 11 items) */
 }
 
 .box span img {
@@ -63,8 +60,42 @@
 }
 
 
-h1, h2 {
+h1 {
+    // color: white;
+    // font-size: 50px;
+
     color: white;
-    font-size: 50px;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px #5A4FCF;
 }
 
+.static-label {
+    position: absolute;
+    bottom: -90px; /* Positioned right under the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Styles */
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    
+    /* THE MAGIC: Reverse the parent's animation */
+    /* If your .box animation is 'animate 20s linear infinite' */
+    animation: keepFlat 20s linear infinite;
+}
+
+@keyframes keepFlat {
+    /* Since your .box goes 360 -> 0, this must go 0 -> 360 
+       to 'cancel out' the rotation and keep the text facing you */
+    0% {
+        transform: translateX(-50%) rotateY(360deg);
+    }
+    100% {
+        transform: translateX(-50%) rotateY(0deg);
+    }
+}
