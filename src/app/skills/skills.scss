@@ -21,7 +21,12 @@
     position: relative;
     width: 200px;
     height: 200px;
+
+    // margin: 100px auto;
+
+
     transform-style: preserve-3d;
+    transform-origin: center center;
     animation: animate 30s linear infinite;
     margin-bottom: 250px; /* Replaces the <br> tags for consistent spacing */
 }
@@ -35,11 +40,15 @@
 }
 .box span {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     width: 100px;
     height: 100px;
-    transform-origin: center;
+    margin-top: -50px;
+    margin-left: -50px;
+
+    // transform-origin: center;
+
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 32.72deg)) translateZ(400px);
     -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
@@ -66,7 +75,7 @@ h1 {
 
     color: white;
     font-size: 3rem;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
     text-shadow: 0 0 10px #5A4FCF;
 }
 
@@ -86,7 +95,7 @@ h1 {
     
     /* THE MAGIC: Reverse the parent's animation */
     /* If your .box animation is 'animate 20s linear infinite' */
-    animation: keepFlat 20s linear infinite;
+    // animation: keepFlat 20s linear infinite;
 }
 
 @keyframes keepFlat {
