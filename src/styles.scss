@@ -10,6 +10,38 @@
   animation-timing-function: ease-in-out;
 }
 
+/* 2. Define the upward movement for the NEW content */
+::view-transition-new(root) {
+  animation-name: fade-slide-up;
+}
+
+/* 3. Define a simple fade for the OLD content so it doesn't slide */
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-group(main-header) {
+  animation: none;
+}
+
+/* --- Keyframe Definitions --- */
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Moves up from 30px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 body {
   /* 1. FONT-FAMILY: Choose a system font stack for high performance and reliability.
        'Roboto' or 'Inter' are popular choices if loaded from Google Fonts (Recommended).
@@ -29,4 +61,33 @@ body {
   /* 4. COLOR: Set a dark, but not pure black, color for better eye comfort. */
   color: #333333; 
 }
+
+
+
+// @keyframes fade-slide-up {
+//   from {
+//     opacity: 0;
+//     transform: translateY(30px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// ::view-transition-new(root) {
+//   animation: 0.6s ease-out both fade-slide-up;
+// }
+
+// ::view-transition-old(root) {
+//   animation: 0.2s ease-in both fade-out;
+// }
+
+// @keyframes fade-out {
+//   to { opacity: 0; }
+// }
+
+// ::view-transition-group(main-header) {
+//   animation: none;
+// }
 

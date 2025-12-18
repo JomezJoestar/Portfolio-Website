@@ -1,0 +1,70 @@
+.skills-page {
+    display: flex;
+    flex-direction: column; /* Stack titles and boxes vertically */
+    justify-content: flex-start; /* Start from the top to allow scrolling */
+    align-items: center; /* Center everything horizontally */
+    min-height: 100vh;
+    padding: 100px 0; /* Add padding so content doesn't touch the top/bottom */
+    background-color: #5A4FCF;
+    background-image: linear-gradient(315deg, #5A4FCF 0%, #242124 74%);
+    overflow-x: hidden; /* Prevent the 3D rotation from causing horizontal scroll */
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures the H1 and the Box are centered */
+    width: 100%;
+}
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 30s linear infinite;
+    margin-bottom: 250px; /* Replaces the <br> tags for consistent spacing */
+}
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 32.72deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
+
+    animation: showLabel 20s linear infinite;
+    animation-delay: calc(var(--i) * -1.81s); /* (20s / 11 items) */
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image_size {
+    width: 10px;
+    height: 10px;
+}
+
+
+h1, h2 {
+    color: white;
+    font-size: 50px;
+}
+

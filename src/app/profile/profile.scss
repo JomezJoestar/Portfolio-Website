@@ -2,23 +2,38 @@
 
 .profile-page {
   /* Ensures the section fills the viewport height below the header */
-  min-height: calc(100vh - 60px); 
+  min-height: calc(100vh - 60px);
+  width: 100%; 
   padding: 40px 20px;
   background-color: #f8f8f8; /* Light background for the page */
+  overflow: hidden;
+  
 }
 
 .profile-container {
   display: flex; /* Activate Flexbox for the container */
-  max-width: 1200px; /* Limits overall width for better readability */
+  height: 100%; /* Fill the profile-page height */
+  max-width: 1400px; /* Limits overall width for better readability */
   margin: 0 auto; /* Centers the container on the page */
   gap: 40px; /* Space between the two columns */
   align-items: flex-start; /* Aligns content to the top */
+
+
 }
 
 /* --- Left Column: Information (50% Width) --- */
 .profile-info {
   flex: 1; /* Takes up one share of space (50%) */
+  height: 400px;
   padding: 20px;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  padding-right: 20px; /* Room for the scrollbar */
+  background-color: #f8f8f8;
+  
+  
+  /* Optional: Custom scrollbar for a cleaner look */
+  // scrollbar-width: thin;
+  // scrollbar-color: #888 #f1f1f1;
 }
 
 .profile-info h2 {
@@ -31,15 +46,29 @@
 .profile-photo {
   flex: 1; /* Takes up one share of space (50%) */
   padding: 20px;
-  text-align: center;
+  // text-align: center;
+
+  background-color: #f8f8f8;
+
+  height: 480px;
+  display: flex;
+  align-items: flex-start; /* Center photo vertically */
+  justify-content: center; /* Center photo horizontally */
+  background-color: #f8f8f8; /* Optional contrast */
 }
+
+
 
 .profile-photo img {
   width: 100%; /* Image fills its column */
   max-width: 400px; /* Prevents image from getting too large */
   height: auto;
-  border-radius: 10px; /* Softens the image corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Softens the image corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+
+
+  // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Optional: Layout for the detailed info */
