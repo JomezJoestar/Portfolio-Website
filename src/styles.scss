@@ -63,6 +63,35 @@ body {
 }
 
 
+/* Add to your respective component CSS files or global styles.css */
+
+/* Education Timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 15px; /* Move the line to the far left */
+    }
+    .timeline-item {
+        padding-left: 50px; /* Reduce gap */
+    }
+    .timeline-dot {
+        left: 4px; /* Align dot with the new line position */
+    }
+}
+
+/* Contact Page Grid */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 25px;
+        margin: 10px;
+        width: 95%; /* Use more screen width on mobile */
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr; /* Stack social boxes 1 per row */
+    }
+}
+
+
 
 // @keyframes fade-slide-up {
 //   from {

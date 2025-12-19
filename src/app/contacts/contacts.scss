@@ -1,0 +1,102 @@
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242124;
+  padding: 20px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.contact-card h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #5A4FCF;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(90, 79, 207, 0.1);
+  border-radius: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.contact-item:hover {
+  background: rgba(90, 79, 207, 0.2);
+  border-color: #5A4FCF;
+  transform: translateX(10px);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
+.label {
+  color: #5A4FCF;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.value {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Social Grid for smaller icons */
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-box {
+  padding: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.social-box:hover {
+  background: #5A4FCF;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(90, 79, 207, 0.4);
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
