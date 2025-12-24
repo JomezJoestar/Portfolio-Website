@@ -91,7 +91,20 @@ body {
     }
 }
 
+/* src/styles.scss */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* This is the most important line for mobile */
+  position: relative;
+}
 
+app-root {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 // @keyframes fade-slide-up {
 //   from {

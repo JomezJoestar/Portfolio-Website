@@ -4,7 +4,7 @@
     justify-content: flex-start; /* Start from the top to allow scrolling */
     align-items: center; /* Center everything horizontally */
     min-height: 100vh;
-    padding: 100px 0; /* Add padding so content doesn't touch the top/bottom */
+    padding: 50px 0; /* Add padding so content doesn't touch the top/bottom */
     background-color: #5A4FCF;
     background-image: linear-gradient(315deg, #5A4FCF 0%, #242124 74%);
     overflow-x: hidden; /* Prevent the 3D rotation from causing horizontal scroll */
@@ -30,7 +30,7 @@
     transform-style: preserve-3d;
     transform-origin: center center;
     animation: animate 30s linear infinite;
-    margin-bottom: 250px; /* Replaces the <br> tags for consistent spacing */
+    margin-bottom: 100px; /* Replaces the <br> tags for consistent spacing */
 }
 @keyframes animate {
     0% {
