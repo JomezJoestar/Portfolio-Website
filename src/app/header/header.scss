@@ -6,14 +6,16 @@
   background-color: white; /* Dark background */
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   
 
   /*Animation*/
   view-transition-name: main-header;
-  // position: fixed;
+  position: sticky;
   // top: 0;
   // width: 100%;
   // z-index: 1000;
+  box-sizing: border-box;
 }
 
 .logo a {
@@ -39,10 +41,46 @@
   color: black;
   padding: 0.5rem 0;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
   color: #FC0082; /* Highlight color for active/hover */
   border-bottom: 2px solid #FC0082;
+}
+
+/* --- MOBILE SCROLLABLE NAV --- */
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column; /* Stack logo above nav */
+    padding: 1rem 0;        /* Remove side padding on header */
+    gap: 10px;
+  }
+
+  .logo {
+    padding: 0 1rem;
+  }
+
+  .main-nav {
+    width: 100%;            /* Nav takes full width of screen */
+    overflow-x: auto;       /* Enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    
+    /* Hide scrollbar for aesthetics */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none; 
+  }
+
+  .main-nav ul {
+    padding: 5px 1.5rem;    /* Padding inside the scroll area */
+    justify-content: flex-start; /* Ensure it starts at the left */
+  }
+
+  .main-nav li {
+    margin-left: 0;
+    margin-right: 1.5rem;   /* Space between items on the right */
+  }
 }
