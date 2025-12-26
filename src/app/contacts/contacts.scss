@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #242124;
+  background-color: #ffffff;
   padding: 20px;
 }
 
@@ -19,11 +19,10 @@
 }
 
 .contact-card h1 {
-  color: white;
+  color: #333;
   text-align: center;
   margin-bottom: 40px;
   font-size: 2.5rem;
-  text-shadow: 0 0 10px #5A4FCF;
 }
 
 .contact-list {
@@ -40,13 +39,17 @@
   border-radius: 15px;
   text-decoration: none;
   transition: 0.3s;
-  border: 1px solid transparent;
+  border: 1px solid #333;
 }
 
 .contact-item:hover {
-  background: rgba(90, 79, 207, 0.2);
-  border-color: #5A4FCF;
+  background: #FC0082;
+  border-color: #FC0082;
   transform: translateX(10px);
+
+  .label, .value {
+    color: #ffffff;
+  }
 }
 
 .icon {
@@ -55,7 +58,7 @@
 }
 
 .label {
-  color: #5A4FCF;
+  color: #333;
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -63,7 +66,7 @@
 }
 
 .value {
-  color: white;
+  color: #333;
   font-size: 1.2rem;
   margin: 0;
 }
@@ -81,15 +84,17 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  color: white;
+  color: #333;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #333;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .social-box:hover {
-  background: #5A4FCF;
+  color: #ffffff;
+  background: #FC0082;
+  border: 1px solid #FC0082;
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(90, 79, 207, 0.4);
 }

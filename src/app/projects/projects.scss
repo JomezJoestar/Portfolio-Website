@@ -3,17 +3,16 @@
 .projects-page {
   padding: 80px 40px;
   min-height: 100vh;
-  background-color: #242124; /* Matching your theme */
+  background-color: #ffffff; /* Matching your theme */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .page-title {
-  color: white;
+  color: #333;
   font-size: 3rem;
   margin-bottom: 50px;
-  text-shadow: 0 0 10px #5A4FCF;
 }
 
 .projects-grid {
@@ -26,18 +25,23 @@
 
 /* --- Project Card Styling --- */
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        border-color: #FC0082;
+    }
 }
 
 .project-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 15px 30px rgba(90, 79, 207, 0.3);
-  border-color: #5A4FCF;
+  border-color: #FC0082;
 }
 
 .project-image {
@@ -64,7 +68,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(90, 79, 207, 0.8);
+  // background: rgba(90, 79, 207, 0.8);
+  background: #FC0082;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +85,7 @@
 .view-btn {
   padding: 10px 20px;
   background: white;
-  color: #5A4FCF;
+  color: #FC0082;
   text-decoration: none;
   font-weight: bold;
   border-radius: 25px;
@@ -98,13 +103,13 @@
 }
 
 .project-info h3 {
-  color: white;
+  color: #333;
   margin-bottom: 15px;
   font-size: 1.5rem;
 }
 
 .project-info p {
-  color: #ccc;
+  color: #333;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -118,7 +123,7 @@
 
 .project-tags span {
   font-size: 0.8rem;
-  color: #5A4FCF;
+  color: #FC0082;
   background: rgba(90, 79, 207, 0.1);
   padding: 5px 12px;
   border-radius: 15px;
