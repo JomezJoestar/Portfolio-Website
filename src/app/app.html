@@ -1,5 +1,14 @@
 <app-header />
 
 <main class="content-area">
+  <button class="music-toggle" (click)="toggleMusic()">
+    <img *ngIf="isMuted" src="assets/images/unmute.png" alt="Mute" class="toggle-icon">
+    
+    <img *ngIf="!isMuted" src="assets/images/mute.png" alt="Unmute" class="toggle-icon">
+  </button>
+
+  <audio #globalAudio autoplay muted loop>
+      <source src="assets/audio/pink-panther-theme.mp3" type="audio/mpeg">
+  </audio>
   <router-outlet />
 </main>

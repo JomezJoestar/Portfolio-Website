@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -11,5 +11,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './home.scss',
 })
 export class HomeComponent {
-
+  
 }

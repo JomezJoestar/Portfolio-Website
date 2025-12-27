@@ -2,21 +2,12 @@
 
 
 .home-hero {
-    position: relative;
-  /* 1. Use Flexbox on the container */
+  position: relative;
   display: flex; 
-  /* 2. Vertically center the content */
   align-items: center; 
-  /* 3. Horizontally center the content */
   justify-content: center;
-  
-  /* 4. Ensure the section takes up the full available height */
-  /* This height is crucial for vertical centering */
   height: calc(100vh - 60px); /* Adjust 60px if your header height is different */
   width: 100%;
-  
-  /* Optional: Background color/image for the hero section */
-//   background-color: #f4f4f4;
 
 
   /* --- GUARANTEED ANIMATION STYLES (Based on Finisher Night) --- */
@@ -39,7 +30,7 @@
   /* CRITICAL: Ensure the text is visible over the dark background */
   color: white;
 
-  
+  overflow: hidden;
 }
 
 /* 4. Define the Keyframes (MUST be in the same file or a global file) */
@@ -56,41 +47,108 @@
   }
 }
 
-.hero-content {
-  /* 5. Center the text itself (H1, P, A) within its container */
-  text-align: center; 
-  max-width: 800px;
-  padding: 20px;
-
-  z-index: 2; /* Ensures content is above the animation canvas */
-  position: relative; /* Required for z-index to work */
+.hero-container {
+    display: flex;
+    flex-direction: row; /* Desktop/Tablet side-by-side */
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    z-index: 2;
+    position: relative;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
-  color: white;
+.hero-text {
+    flex: 1; /* Exactly 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers text in its half */
+    padding-left: 50px;
+    text-align: left;
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 1.5em;
+        max-width: 500px; /* Prevents text from stretching too wide */
+    }
 }
 
-p {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-  color: white;
+.hero-image {
+    flex: 1; /* Takes right half */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 80vh; /* Adjust based on your image size */
+        object-fit: contain;
+        /* Optional: adds a float animation to the panther */
+        animation: float 4s ease-in-out infinite;
+        /* Optional: Add a drop shadow to help it pop against the gradient */
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
 .cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff; /* Example primary color */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+    display: inline-block;
+    /* ADD THESE TWO LINES */
+    width: fit-content; 
+    align-self: flex-start; /* If the parent is a flex column, this keeps it left-aligned */
 
-  
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
+}
+
+/* 📱 Mobile Response (Phone View) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stacks image on top of text for phone */
+        text-align: center;
+        justify-content: center;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .hero-text {
+        align-items: center;
+        text-align: center;
+        padding-right: 0;
+        padding-left: 0;
+        order: 2; /* Text moves below image on small screens */
+        h1 { font-size: 2.2em; }
+    }
+
+    .hero-image {
+        order: 1; /* Image appears first */
+        margin-bottom: 20px;
+        img { max-height: 250px; }
+    }
+
+    .cta-button {
+        align-self: center; /* Centers the button on phones */
+        margin: 0 auto;
+    }
+
 }

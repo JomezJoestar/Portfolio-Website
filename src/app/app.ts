@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,29 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'my-portfolio';
+
+  @ViewChild('globalAudio') audioPlayer!: ElementRef<HTMLAudioElement>;
+  isMuted: boolean = true;
+
+  ngAfterViewInit() {
+    const audio = this.audioPlayer.nativeElement;
+    // This starts the "silent" playback immediately on load
+    audio.play().catch(() => {
+      console.log("Browser blocked initial play. Waiting for user to unmute.");
+    });
+  }
+
+  toggleMusic() {
+    const audio = this.audioPlayer.nativeElement;
+    if (this.isMuted) {
+      audio.muted = false;
+      audio.play(); // Ensures it plays if the browser blocked the initial start
+      this.isMuted = false;
+    } else {
+      audio.muted = true;
+      this.isMuted = true;
+    }
+  }
 }

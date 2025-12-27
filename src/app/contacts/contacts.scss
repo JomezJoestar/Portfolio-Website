@@ -3,12 +3,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
   padding: 20px;
+
+  /* --- GUARANTEED ANIMATION STYLES (Based on Finisher Night) --- */
+  
+  /* 1. Define a dark, multi-color gradient (adjust colors to your preference) */
+  background-image: linear-gradient(
+    -45deg,
+    #000000, /* Black */
+    #fc0082, /* Dark Purple */
+    #8600fc, /* Darker Blue-Violet */
+    #000000  /* Black */
+  );
+  
+  /* 2. Make the background much larger than the container */
+  background-size: 400% 400%; 
+  
+  /* 3. Apply the animation: 10s duration, looping forever */
+  animation: gradient-shift 10s ease infinite; 
+  
+  /* CRITICAL: Ensure the text is visible over the dark background */
+  color: white;
+
+  overflow: hidden;
+}
+
+/* 4. Define the Keyframes (MUST be in the same file or a global file) */
+/* Since this is component-specific, keep it here: */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position (moves horizontally) */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
 }
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.05);
+  // background: rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 50px;
