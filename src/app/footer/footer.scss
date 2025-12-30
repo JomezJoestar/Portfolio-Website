@@ -1,0 +1,64 @@
+/* src/app/footer/footer.component.scss */
+.music-credit-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Deep dark background */
+  color: #ffffff;
+  padding: 12px 0;
+  z-index: 1100;
+  border-top: 1px solid rgba(252, 0, 130, 0.3); /* Matches your pink theme */
+  font-size: 12px;
+  
+  /* Forces the footer itself to handle the horizontal scroll */
+  overflow-x: auto; 
+  white-space: nowrap; 
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+
+  /* Custom scrollbar for a clean look */
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #fc0082;
+    border-radius: 10px;
+  }
+}
+
+.credit-container {
+  display: inline-flex; /* Changed from flex to inline-flex to allow width to expand */
+  align-items: center;
+  padding: 0 20px;
+  gap: 25px; /* Space between each credit item */
+}
+
+.credit-item {
+  display: inline-block;
+  opacity: 0.9;
+
+  strong {
+    color: #fc0082; /* Pink accent color */
+    margin-right: 4px;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #fc0082;
+    }
+  }
+}
+
+/* 📱 Mobile Specific Tweaks */
+@media (max-width: 480px) {
+  .music-credit-bar {
+    padding: 10px 0;
+    font-size: 11px;
+    /* Ensure the music toggle button doesn't hide the text scrollbar */
+    padding-right: 60px; 
+  }
+}

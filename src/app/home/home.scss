@@ -85,8 +85,8 @@
     align-items: center;
 
     img {
-        width: auto;
-        height: auto;
+        width: 400px;
+        height: 400px;
         max-width: 100%;
         max-height: 80vh; /* Adjust based on your image size */
         object-fit: contain;
@@ -95,6 +95,13 @@
         /* Optional: Add a drop shadow to help it pop against the gradient */
         filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
     }
+}
+
+.music-reference {
+    background-color: #333;
+    color: #ffffff;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 @keyframes float {
@@ -142,7 +149,7 @@
 
     .hero-image {
         order: 1; /* Image appears first */
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         img { max-height: 250px; }
     }
 
