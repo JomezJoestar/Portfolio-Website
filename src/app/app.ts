@@ -29,10 +29,11 @@ export class AppComponent implements AfterViewInit {
     const audio = this.audioPlayer.nativeElement;
     if (this.isMuted) {
       audio.muted = false;
-      audio.play(); // Ensures it plays if the browser blocked the initial start
+      audio.play().catch(err => console.log("Playback interaction required"));
       this.isMuted = false;
     } else {
       audio.muted = true;
+      audio.pause(); 
       this.isMuted = true;
     }
   }

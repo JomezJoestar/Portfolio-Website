@@ -7,7 +7,7 @@
     <img *ngIf="!isMuted" src="assets/images/mute.png" alt="Unmute" class="toggle-icon">
   </button>
 
-  <audio #globalAudio autoplay muted loop>
+  <audio #globalAudio muted loop>
       <source src="assets/audio/Neutrin05 - Home.mp3" type="audio/mpeg">
   </audio>
   <router-outlet />
